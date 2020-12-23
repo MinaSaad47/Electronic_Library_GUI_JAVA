@@ -17,12 +17,12 @@ public class Person {
     private String m_Address;
     private String m_CellPhone;
     private String m_Email;
-    private String m_Sex;
+    private String m_gender;
     private String m_Type;
     private Boolean m_IsBlocked = false;
     
     // Constructor
-    public Person(int m_Id, String m_Password, String m_FristName, String m_SecondName, String m_Address, String m_CellPhone, String m_Email, String m_Sex, String m_Type) {
+    public Person(int m_Id, String m_Password, String m_FristName, String m_SecondName, String m_Address, String m_CellPhone, String m_Email, String m_gender, String m_Type) {
         this.m_Id = m_Id;
         this.m_Password = m_Password;
         this.m_FristName = m_FristName;
@@ -30,7 +30,7 @@ public class Person {
         this.m_Address = m_Address;
         this.m_CellPhone = m_CellPhone;
         this.m_Email = m_Email;
-        this.m_Sex = m_Sex;
+        this.m_gender = m_gender;
         this.m_Type = m_Type;
     }
     // END of Constructor
@@ -67,8 +67,8 @@ public class Person {
         return m_Email;
     }
 
-    public String sex() {
-        return m_Sex;
+    public String gender() {
+        return m_gender;
     }
 
     public String type() {
@@ -110,8 +110,8 @@ public class Person {
         this.m_Email = m_Email;
     }
 
-    public void sex(String m_Sex) {
-        this.m_Sex = m_Sex;
+    public void gender(String m_gender) {
+        this.m_gender = m_gender;
     }
 
     public void type(String m_Type) {

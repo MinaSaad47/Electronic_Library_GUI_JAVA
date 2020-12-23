@@ -6,7 +6,13 @@
 package electronic_library_gui_java;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,55 +23,65 @@ import javax.swing.JTextField;
  *
  * @author lm47
  */
-public class LogIn {
-    JFrame login;
+public class LogIn extends JFrame implements ActionListener {
+    Dimension dim;
+    
     ImageIcon icon;
-    JLabel welcome, userName, password;
-    JTextField t_Username, t_Password;
+    JLabel welcome, email, password;
+    JTextField t_email, t_Password;
     JButton signIn, createAccount;
     
     Color cWhite = Color.white;
     Color cBackground = new Color(51, 51, 51);
     
+    CreateAccount m_CreateAccount;
+    
     LogIn() {
-        login = new JFrame();
-        login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        login.setTitle("Login");
-        login.setIconImage((icon = new ImageIcon("img/login_icon.png")).getImage());
-        login.setSize(400, 800);
-        login.getContentPane().setBackground(cBackground);
-        login.setResizable(false);
-        login.setVisible(true);
-        login.setLayout(null);
-        welcome = new JLabel("Welcome");
-        welcome.setBounds(10, 30, 200, 40);
+        
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Log In");
+        this.setIconImage((icon = new ImageIcon("img/login_icon.png")).getImage());
+        this.setSize(400, 800);
+        
+        // Put the window to the center of the screen
+        dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        
+        this.getContentPane().setBackground(cBackground);
+        this.setResizable(false);
+        this.setVisible(true);
+        this.setLayout(null);
+        
+        welcome = new JLabel("Welcome.");
+        welcome.setBounds(10, 30, 390, 40);
         welcome.setFont(new Font(null, Font.BOLD, 28));
         welcome.setForeground(cWhite);
          
         
-        userName = new JLabel("username");
-        userName.setForeground(cWhite);
-        userName.setFont((new Font(null, Font.PLAIN, 20)));
-        userName.setBounds(10, 100, 200, 40);
+        email = new JLabel("Email");
+        email.setForeground(cWhite);
+        email.setFont((new Font(null, Font.PLAIN, 20)));
+        email.setBounds(10, 100, 200, 40);
                 
         
-        password = new JLabel("password");
+        password = new JLabel("Password");
         password.setForeground(cWhite);
         password.setFont((new Font(null, Font.PLAIN, 20)));
         password.setBounds(10, 200, 200, 40);
         
-        t_Username = new JTextField();
-        t_Username.setBounds(10, 150, 380, 40);
-        t_Username.setBackground(cBackground);
-        t_Username.setForeground(cWhite);
-        t_Username.setFont(new Font(null, Font.PLAIN, 16));
+        t_email = new JTextField();
+        t_email.setBounds(10, 150, 380, 40);
+        t_email.setBackground(cBackground);
+        t_email.setForeground(cWhite);
+        t_email.setFont(new Font(null, Font.BOLD, 16));
+        t_email.setBorder(BorderFactory.createMatteBorder(0, 0, 5, 0, Color.LIGHT_GRAY));
         
         t_Password = new JTextField();
         t_Password.setBounds(10, 250, 380, 40);
         t_Password.setBackground(cBackground);
         t_Password.setForeground(cWhite);
-        t_Password.setFont(new Font(null, Font.PLAIN, 16));
-        
+        t_Password.setFont(new Font(null, Font.BOLD, 16));
+        t_Password.setBorder(BorderFactory.createMatteBorder(0, 0, 5, 0, Color.LIGHT_GRAY));
         
         signIn = new JButton("Sign In");
         signIn.setBounds(10, 600, 380, 40);
@@ -74,15 +90,34 @@ public class LogIn {
         createAccount = new JButton("Create An Account");
         createAccount.setBounds(10, 650, 380, 40);
         createAccount.setFocusable(false);
+        createAccount.addActionListener(this);
 
-        login.add(welcome);
-        login.add(userName);
-        login.add(password);
-        login.add(t_Username);
-        login.add(t_Password);
-        login.add(signIn);
-        login.add(createAccount);
+        this.add(welcome);
+        this.add(email);
+        this.add(password);
+        this.add(t_email);
+        this.add(t_Password);
+        this.add(signIn);
+        this.add(createAccount);
         
         
+    }
+    
+    LogIn(String text, Point location) {
+        
+        this();
+        welcome.setText(text);
+        this.setLocation(location);
+        
+        
+    }
+    
+
+    @Override
+    public void actionPerformed(ActionEvent event) {
+        if (event.getSource() == createAccount) {
+            this.dispose();
+            m_CreateAccount = new CreateAccount(this.getLocation());
+        }
     }
 }
