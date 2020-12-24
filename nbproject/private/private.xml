@@ -4,11 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/LogIn.java</file>
+            <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/TextField1.java</file>
+            <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/Button1.java</file>
             <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/Electronic_Library_GUI_JAVA.java</file>
-            <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/User.java</file>
-            <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/Librarian.java</file>
-            <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/Book.java</file>
-            <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/Library.java</file>
+            <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/CreateAccount.java</file>
+            <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/ComboBox1.java</file>
+            <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/Label1.java</file>
             <file>file:/home/lm47/NetBeansProjects/Electronic_Library_GUI_JAVA/src/electronic_library_gui_java/Person.java</file>
         </group>
     </open-files>
