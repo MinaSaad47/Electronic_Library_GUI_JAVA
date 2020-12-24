@@ -11,8 +11,13 @@ package electronic_library_gui_java;
  */
 public class User extends Person {
     
-    public User(int id, String password, String fristName, String secondName, String address, String cellPhone, String email, String sex, String type) {
-        super(id, password, fristName, secondName, address, cellPhone, email, sex, type);
+    public User() {
+        super();
+        super.type("Reader");
     }
+    public User(int id, String password, String fristName, String secondName, String address, String cellPhone, String email, String sex) {
+        super(id, password, fristName, secondName, address, cellPhone, email, sex, "Reader");
+    }
+    
     
 }

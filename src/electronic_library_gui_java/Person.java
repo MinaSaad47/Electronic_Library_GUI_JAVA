@@ -22,6 +22,9 @@ public class Person {
     private Boolean m_IsBlocked = false;
     
     // Constructor
+    public Person() {
+        
+    }
     public Person(int m_Id, String m_Password, String m_FristName, String m_SecondName, String m_Address, String m_CellPhone, String m_Email, String m_gender, String m_Type) {
         this.m_Id = m_Id;
         this.m_Password = m_Password;

@@ -42,38 +42,31 @@ public class DB {
             System.out.println(e);    
         }
     }
-    /*
-    public static int check(String query, int cols[], String value[]) {
-       try {  
+    
+    public static void insert(Person person) {
+        try {  
             Class.forName("com.mysql.jdbc.Driver");  
             Connection con=DriverManager.getConnection(  
             "jdbc:mysql://localhost:3306/library","goo1","#Goo123456");  
             
             Statement stmt=con.createStatement();
-            ResultSet rs=stmt.executeQuery(query);  
-            while(rs.next()) {
-                boolean isFound = false;
-                for (int i = 0; i < cols.length; i++) {
-                    if (rs.getString(cols[i]).equals(value[i])) {
-                        isFound = true;
-                    }
-                    else {
-                        isFound = false;
-                    }
-                }
-                if (isFound) {
-                    return rs.getInt(1);
-                }
-                  
-            } 
+            String query = "INSERT INTO person (id, first_name, last_name, email, password, address, cell_phone, is_blocked, type) values ("
+                    + person.id() + ", '" +  person.fristName() + "' , '" + person.secondName() + "' , '" + person.password() + "' , '" 
+                    + person.email()+ "' , '" + person.address() + "' , '" + person.cellPhone() + "' ," + person.isBlocked() +  " , '" 
+                    + person.type() + "' )";
+                            
+            
+            stmt.executeUpdate(query);  
+            
             con.close();  
         }
         catch (Exception e) { 
             System.out.println(e);    
         }
-       return 0;
     }
-*/
+    
+ 
+
     
     public static int check(String query, int col, String value) {
        try {  

@@ -12,8 +12,13 @@ package electronic_library_gui_java;
 public class Librarian extends Person {
     
     // Constructor
-    public Librarian(int id, String password, String fristName, String secondName, String address, String cellPhone, String email, String sex, String type) {
-        super(id, password, fristName, secondName, address, cellPhone, email, sex, type);
+    public Librarian() {
+        super();
+        super.type("Librarian");
+    }
+    public Librarian(int id, String password, String fristName, String secondName, String address, String cellPhone, String email, String sex) {
+        super(id, password, fristName, secondName, address, cellPhone, email, sex, "Librarian");
+        
     }
     // END of Constructor
     
